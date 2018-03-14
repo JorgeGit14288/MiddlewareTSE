@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://consulta2018.azurewebsites.net/CaptchaService.asmx?wsdl" filename="CaptchaService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx?wsdl" filename="CaptchaService.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>

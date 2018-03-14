@@ -65,7 +65,7 @@ namespace MiddlewareTse.Controllers
                 RespuestaCapchaModel model = new RespuestaCapchaModel();
                 model.imagen = respuesta.IMA;
                 model.transaccion = respuesta.NTRANS;
-         
+                res.data = model;
                 return res;
                 //return Ok(model);
                 //IHttpActionResul
