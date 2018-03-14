@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ObtenerLugar1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nTransac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerLugar1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerLugar1Result" type="tns:RESPUESTA2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RESPUESTA2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USRMENSAJE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DETMENSAJE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BOLETA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DPI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRES_APELLIDOS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_DE_NACIMIENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MESA_DE_NUMERO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAGINA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LINEA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CENTRO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPARTAMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MUNICIPIO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Transacciones1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codSys" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cui" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transacciones1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transacciones1Result" type="tns:RESULTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RESULTADO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NTRANS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USRMENSAJE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DETMENSAJE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerLugar1SoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerLugar1" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerLugar1SoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerLugar1Response" />
+  </wsdl:message>
+  <wsdl:message name="Transacciones1SoapIn">
+    <wsdl:part name="parameters" element="tns:Transacciones1" />
+  </wsdl:message>
+  <wsdl:message name="Transacciones1SoapOut">
+    <wsdl:part name="parameters" element="tns:Transacciones1Response" />
+  </wsdl:message>
+  <wsdl:portType name="CaptchaServiceSoap">
+    <wsdl:operation name="ObtenerLugar1">
+      <wsdl:input message="tns:ObtenerLugar1SoapIn" />
+      <wsdl:output message="tns:ObtenerLugar1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transacciones1">
+      <wsdl:input message="tns:Transacciones1SoapIn" />
+      <wsdl:output message="tns:Transacciones1SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CaptchaServiceSoap" type="tns:CaptchaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerLugar1">
+      <soap:operation soapAction="http://tempuri.org/ObtenerLugar1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transacciones1">
+      <soap:operation soapAction="http://tempuri.org/Transacciones1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CaptchaServiceSoap12" type="tns:CaptchaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerLugar1">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerLugar1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transacciones1">
+      <soap12:operation soapAction="http://tempuri.org/Transacciones1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CaptchaService">
+    <wsdl:port name="CaptchaServiceSoap" binding="tns:CaptchaServiceSoap">
+      <soap:address location="https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CaptchaServiceSoap12" binding="tns:CaptchaServiceSoap12">
+      <soap12:address location="https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
