@@ -101,7 +101,7 @@ namespace MiddlewareTse.Controllers
                 res.LINEA = respuesta.LINEA;
                 res.MESA_DE_NUMERO = respuesta.MESA_DE_NUMERO;
                 res.MUNICIPIO = respuesta.MUNICIPIO;
-                res.NOMBREA_APELLIDOS = respuesta.NOMBRES_APELLIDOS;
+                res.NOMBRES_APELLIDOS = respuesta.NOMBRES_APELLIDOS;
                 res.PAGINA = respuesta.PAGINA;
                 return res;
             }

@@ -11,7 +11,7 @@ namespace MiddlewareTse.Models
         public string USRMENSAJE { get; set; }
         public string BOLETA { get; set; }
         public string DPI { get; set; }
-        public string NOMBREA_APELLIDOS { get; set; }
+        public string NOMBRES_APELLIDOS { get; set; }
         public string FECHA_DE_NACIMIENTO { get; set; }
         public string MESA_DE_NUMERO { get; set; }
         public string PAGINA { get; set; }
