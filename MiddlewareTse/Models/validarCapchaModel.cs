@@ -7,8 +7,8 @@ namespace MiddlewareTse.Models
 {
     public class validarCapchaModel
     {
-        public string transaccion { get; set; }
-        public string codigoCapcha { get; set; }
-        public string codigoSistema { get; set; }
+        public string nTransac { get; set; }
+        public string Guid { get; set; }
+        public string Id { get; set; }
     }
 }

@@ -9,13 +9,7 @@ using System.Web.Http.Cors;
 
 namespace MiddlewareTse.Controllers
 {
-    /*
-     * 
-     * STATUS:0,1 //SI ES 1 ES EXITO, 0 ERROR, MOSTRAR USR/MESSAGE
-     * USRMENSAJE: STRING
-     * 
-     * 
-     * */
+ 
     [EnableCors("*", "*", "*")]
     public class ConsultarVotacionController : ApiController
     {
@@ -42,40 +36,34 @@ namespace MiddlewareTse.Controllers
         [HttpPost]
         [ActionName("getCapcha")]
         [Route("api/getCapcha")]
-        public httpRespuesta getCapcha(SolicitudCapchaModel solicitud)
+        public RespuestaCapchaModel getCapcha(SolicitudCapchaModel solicitud)
         {
-            httpRespuesta res = new httpRespuesta();
+            RespuestaCapchaModel res = new RespuestaCapchaModel();
             try
             {
-                
                 if (!ModelState.IsValid)
                 {
-                    return null;
+                    res.STATUS = "0";
+                    res.USRMENSAJE = "Los datos para la consulta no son validos";
+                    return res;
+                    
                 }
-                //creamos el cliente ws
-                //wsTSE.CaptchaServiceSoapClient wsClient = new wsTSE.CaptchaServiceSoapClient();
-                
                 wsConsulta.CaptchaService wsClient = new wsConsulta.CaptchaService ();
 
                 var respuesta = wsClient.Transacciones1(solicitud.codSys, solicitud.cui, solicitud.fechaNacimiento);
-
-                //var respuesta = wsClient.Transacciones1(solicitud.codSys, solicitud.cui, solicitud.fechaNacimiento);
-                res.status = respuesta.STATUS;
-                res.mensaje = respuesta.USRMENSAJE;
-                RespuestaCapchaModel model = new RespuestaCapchaModel();
-                model.imagen = respuesta.IMA;
-                model.transaccion = respuesta.NTRANS;
-                res.data = model;
+                //PARSEAMOS LA RESPUESTA
+                res.USRMENSAJE = respuesta.USRMENSAJE;
+                res.STATUS = respuesta.STATUS;
+                res.IMA = respuesta.IMA;
+                res.NTRANS = respuesta.NTRANS;
+                
                 return res;
-                //return Ok(model);
-                //IHttpActionResul
-
             }
             catch (Exception ex)
             {
-                res.status = "0";
-                res.mensaje = ex.Message;
-                res.data = null; 
+                res.STATUS = "0";
+                res.USRMENSAJE = ex.Message;
+                
                 return res;
             }
             
@@ -83,52 +71,44 @@ namespace MiddlewareTse.Controllers
 
         // POST: api/ConsultarVotacion
         [HttpPost]
-        [ActionName("validarCapcha")]
-        [Route("api/validarCapcha")]
-        public httpRespuesta validarCapcha(validarCapchaModel vModel)
+        [ActionName("obtenerLugar")]
+        [Route("api/obtenerLugar")]
+        public LugarDeVotacionModel obtenerLugar(validarCapchaModel vModel)
         {
-            httpRespuesta res = new httpRespuesta();
+            LugarDeVotacionModel res = new LugarDeVotacionModel();
             try
             {
                 if (!ModelState.IsValid)
                 {
-                    return null;
+                    res.STATUS = "0";
+                    res.USRMENSAJE = "Los datos enviados no son correctos";
+                    return res;
                 }
 
-                //creamos el cliente ws
-                // wsTSE.CaptchaServiceSoapClient wsClient = new wsTSE.CaptchaServiceSoapClient();
-                //WsTse.CaptchaServiceSoapClient wsClient = new WsTse.CaptchaServiceSoapClient();
-                // var respuesta = wsClient.ObtenerLugar1(vModel.transaccion, vModel.codigoCapcha, vModel.codigoSistema);
+              
 
                 wsConsulta.CaptchaService wsClient = new wsConsulta.CaptchaService();
 
-                var respuesta = wsClient.ObtenerLugar1(vModel.transaccion, vModel.codigoCapcha, vModel.codigoSistema);
-
-
-                LugarDeVotacionModel model = new LugarDeVotacionModel();
-                model.nombre = respuesta.NOMBRES_APELLIDOS;
-                model.departamento = respuesta.DEPARTAMENTO;
-                model.municipio = respuesta.MUNICIPIO;
-                model.fechaNacimiento = respuesta.FECHA_DE_NACIMIENTO;
-                model.dpi = respuesta.DPI;
-                model.direccion = respuesta.DIRECCION;
-                model.centro = respuesta.CENTRO;
-                model.boleta = respuesta.BOLETA;
-                model.linea = respuesta.LINEA;
-                model.pagina = respuesta.PAGINA;
-                model.numeroMesa = respuesta.MESA_DE_NUMERO;              
-                
-                res.mensaje = respuesta.USRMENSAJE;
-                res.status = respuesta.STATUS;
-                res.data = model;
-               
+                var respuesta = wsClient.ObtenerLugar1(vModel.nTransac, vModel.Guid, vModel.Id);
+                res.STATUS = respuesta.STATUS;
+                res.USRMENSAJE = respuesta.USRMENSAJE;
+                res.BOLETA = respuesta.BOLETA;
+                res.CENTRO = respuesta.CENTRO;
+                res.DEPARTAMENTO = respuesta.DEPARTAMENTO;
+                res.DIRECCION = respuesta.DIRECCION;
+                res.DPI = respuesta.DPI;
+                res.FECHA_DE_NACIMIENTO = respuesta.FECHA_DE_NACIMIENTO;
+                res.LINEA = respuesta.LINEA;
+                res.MESA_DE_NUMERO = respuesta.MESA_DE_NUMERO;
+                res.MUNICIPIO = respuesta.MUNICIPIO;
+                res.NOMBREA_APELLIDOS = respuesta.NOMBRES_APELLIDOS;
+                res.PAGINA = respuesta.PAGINA;
                 return res;
             }
             catch (Exception ex)
             {
-                res.status = "0";
-                res.mensaje = ex.Message;
-                res.data = null;
+                res.STATUS = "0";
+                res.USRMENSAJE = ex.Message;
                 return res;
             }
         }

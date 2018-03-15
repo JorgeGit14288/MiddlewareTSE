@@ -7,7 +7,9 @@ namespace MiddlewareTse.Models
 {
     public class RespuestaCapchaModel
     {
-        public string transaccion { get; set; }
-        public string imagen { get; set; }
+        public string NTRANS { get; set; }
+        public string IMA { get; set; }
+        public string USRMENSAJE { get; set; }
+        public string STATUS { get; set; }
     }
 }

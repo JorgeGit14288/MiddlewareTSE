@@ -7,16 +7,18 @@ namespace MiddlewareTse.Models
 {
     public class LugarDeVotacionModel
     {
-        public string boleta { get; set; }
-        public string dpi { get; set; }
-        public string nombre { get; set; }
-        public string fechaNacimiento { get; set; }
-        public string numeroMesa { get; set; }
-        public string pagina { get; set; }
-        public string linea { get; set; }
-        public string centro { get; set; }
-        public string direccion { get; set; }
-        public string departamento { get; set; }
-        public string municipio { get; set; }
+        public string STATUS { get; set; }
+        public string USRMENSAJE { get; set; }
+        public string BOLETA { get; set; }
+        public string DPI { get; set; }
+        public string NOMBREA_APELLIDOS { get; set; }
+        public string FECHA_DE_NACIMIENTO { get; set; }
+        public string MESA_DE_NUMERO { get; set; }
+        public string PAGINA { get; set; }
+        public string LINEA { get; set; }
+        public string CENTRO { get; set; }
+        public string DIRECCION { get; set; }
+        public string DEPARTAMENTO { get; set; }
+        public string MUNICIPIO { get; set; }
     }
 }
