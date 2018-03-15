@@ -9,10 +9,11 @@ using System.Web.Http.Cors;
 
 namespace MiddlewareTse.Controllers
 {
- 
+
     [EnableCors("*", "*", "*")]
     public class ConsultarVotacionController : ApiController
     {
+        private string token = "9NM+D34KVLzIwjc2eOCcJ5R/Ooteu3/PjqjFDlfyIfayEH52PHGm8U7JHxk69vVI";
         // POST: api/ConsultarVotacion
         [HttpPost]
         [ActionName("test")]
@@ -47,6 +48,12 @@ namespace MiddlewareTse.Controllers
                     res.USRMENSAJE = "Los datos para la consulta no son validos";
                     return res;
                     
+                }
+                if (solicitud.token != token)
+                {
+                    res.STATUS = "0";
+                    res.USRMENSAJE = "Lo sentimos, no esta autorizado para utilizar este servicio";
+                    return res;
                 }
                 wsConsulta.CaptchaService wsClient = new wsConsulta.CaptchaService ();
 
@@ -84,8 +91,13 @@ namespace MiddlewareTse.Controllers
                     res.USRMENSAJE = "Los datos enviados no son correctos";
                     return res;
                 }
+                if (vModel.token != token)
+                {
+                    res.STATUS = "0";
+                    res.USRMENSAJE = "Lo sentimos, no esta autorizado para utilizar este servicio";
+                    return res;
+                }
 
-              
 
                 wsConsulta.CaptchaService wsClient = new wsConsulta.CaptchaService();
 
