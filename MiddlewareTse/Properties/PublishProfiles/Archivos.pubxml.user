@@ -139,10 +139,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/MiddlewareTse.dll">
-      <publishTime>03/14/2018 20:42:54</publishTime>
+      <publishTime>03/14/2018 21:28:37</publishTime>
     </File>
     <File Include="bin/MiddlewareTse.XmlSerializers.dll">
-      <publishTime>03/14/2018 20:42:55</publishTime>
+      <publishTime>03/14/2018 21:28:37</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/03/2014 20:33:56</publishTime>

@@ -10,7 +10,8 @@ using System.Web.Http.Cors;
 namespace MiddlewareTse.Controllers
 {
 
-    [EnableCors("*", "*", "*")]
+    // [EnableCors(origins: "http://localhost:8100", headers:"*", methods:"*")]
+   // [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ConsultarVotacionController : ApiController
     {
         private string token = "9NM+D34KVLzIwjc2eOCcJ5R/Ooteu3/PjqjFDlfyIfayEH52PHGm8U7JHxk69vVI";
