@@ -131,10 +131,10 @@
   </wsdl:binding>
   <wsdl:service name="CaptchaService">
     <wsdl:port name="CaptchaServiceSoap" binding="tns:CaptchaServiceSoap">
-      <soap:address location="https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx" />
+      <soap:address location="https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx" />
     </wsdl:port>
     <wsdl:port name="CaptchaServiceSoap12" binding="tns:CaptchaServiceSoap12">
-      <soap12:address location="https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx" />
+      <soap12:address location="https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

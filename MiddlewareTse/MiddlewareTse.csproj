@@ -264,6 +264,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <None Include="Web References\wsConsulta\CaptchaService.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -306,10 +307,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx%3fwsdl">
+    <WebReferenceUrl Include="https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\wsConsulta\</RelPath>
-      <UpdateFromURL>https://wsconsulta2018.azurewebsites.net/CaptchaService.asmx%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
