@@ -67,6 +67,6 @@ C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\Middl
 C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\obj\Debug\MiddlewareTse.csprojResolveAssemblyReference.cache
 C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\obj\Debug\MiddlewareTse.dll
 C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\obj\Debug\MiddlewareTse.pdb
+C:\Users\Jorge Fuentes\documents\visual studio 2015\Projects\MiddlewareTse\MiddlewareTse\obj\Debug\MiddlewareTse.csprojResolveAssemblyReference.cache
