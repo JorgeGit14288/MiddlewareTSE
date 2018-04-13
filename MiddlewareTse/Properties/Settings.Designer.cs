@@ -26,7 +26,7 @@ namespace MiddlewareTse.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://13.91.126.89/CaptchaService.asmx")]
         public string MiddlewareTse_wsConsulta_CaptchaService {
             get {
                 return ((string)(this["MiddlewareTse_wsConsulta_CaptchaService"]));

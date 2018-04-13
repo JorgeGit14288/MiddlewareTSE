@@ -307,10 +307,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx">
+    <WebReferenceUrl Include="http://13.91.126.89/CaptchaService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\wsConsulta\</RelPath>
-      <UpdateFromURL>https://wsconsultadv2018.azurewebsites.net/CaptchaService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://13.91.126.89/CaptchaService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
